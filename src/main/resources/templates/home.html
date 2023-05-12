@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700"/>
+
+    <!-- Nucleo Icons -->
+    <link href="./admin/assets/css/nucleo-icons.css" rel="stylesheet"/>
+    <link href="./admin/assets/css/nucleo-svg.css" rel="stylesheet"/>
+
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link id="pagestyle" href="./admin/assets/css/material-dashboard.css?v=3.0.4" rel="stylesheet"/>
+
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+            integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+            crossorigin="anonymous"
+    />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+            crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./signin.css" />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link
+            href="https://fonts.googleapis.com/css?family=Poppins"
+            rel="stylesheet"
+    />
+</head>
+<body>
+<div class="signin" id="signin">
+    <div class="signin__content">
+        <h1 class="signin__heading">Sign in</h1>
+        <h4 class="signin__caption">
+            <hr
+                    style="
+              display: inline-block;
+              transform: translateY(200%);
+              margin-right: 1rem;
+              border-radius: 2px;
+            "
+                    width="20%"
+                    size="2px"
+                    color="red"
+            />
+            Sign up with
+        </h4>
+        <div class="signin-social">
+            <div class="signin-social__item">
+                <i class="fa-brands fa-google sigin-social__icon"></i>
+                <span class="signin-social__text">Sign in with Google</span>
+            </div>
+            <div class="signin-social__item">
+                <i class="fa-brands fa-facebook sigin-social__icon"></i>
+                <span class="signin-social__text">Sign in with Facebook</span>
+            </div>
+        </div>
+        <form class="signin-form">
+            <div class="signin-form__group">
+                <input
+                        type="text"
+                        class="signin-form__input"
+                        id="user"
+                        placeholder="username"
+                />
+                <input
+                        type="password"
+                        class="signin-form__input"
+                        id="pass"
+                        placeholder="password"
+                />
+                <div class="checkbox">
+                    <input
+                            type="checkbox"
+                            class="checkbox__input"
+                            id="checkbox__input"
+                    />
+                    <label for="checkbox__input" class="checkbox__label">Save Password</label><br />
+                </div>
+            </div>
+        </form>
+        <input type="submit" class="signin__submit" onclick="checkTk()" value="Sign in">
+        <div class="checkbox2">
+            <input type="checkbox" class="checkbox2__input" id="checkbox2__input">
+            <label for="checkbox2__input" class="checkbox2__lable" onclick="myFunction()">
+                <div class="checkbox2__spin"></div>
+            </label>
+        </div>
+    </div>
+    <div class="signin__image">
+        <img src="image/phihanhgia.png" alt="" />
+    </div>
+</div>
+
+</body>
+<script>
+    if(localStorage.getItem("KEY")!=null)
+        home();
+    else
+        login();
+    // home();
+    function login(){
+
+        document.body.innerHTML=`<div class="signin" id="signin">
+      <div class="signin__content">
+        <h1 class="signin__heading">Sign in</h1>
+        <h4 class="signin__caption">
+          <hr
+            style="
+              display: inline-block;
+              transform: translateY(200%);
+              margin-right: 1rem;
+              border-radius: 2px;
+            "
+            width="20%"
+            size="2px"
+            color="red"
+          />
+          Sign up with
+        </h4>
+        <div class="signin-social">
+          <div class="signin-social__item">
+            <i class="fa-brands fa-google sigin-social__icon"></i>
+            <span class="signin-social__text">Sign in with Google</span>
+          </div>
+          <div class="signin-social__item">
+            <i class="fa-brands fa-facebook sigin-social__icon"></i>
+            <span class="signin-social__text">Sign in with Facebook</span>
+          </div>
+        </div>
+        <form class="signin-form">
+          <div class="signin-form__group">
+            <input
+              type="text"
+              class="signin-form__input"
+              id="user"
+              placeholder="username"
+            />
+            <input
+              type="password"
+              class="signin-form__input"
+              id="pass"
+              placeholder="password"
+            />
+            <div class="checkbox">
+              <input
+                type="checkbox"
+                class="checkbox__input"
+                id="checkbox__input"
+              />
+              <label for="checkbox__input" class="checkbox__label">Save Password</label><br />
+            </div>
+          </div>
+        </form>
+        <input type="submit" class="signin__submit" onclick="checkTk()" value="Sign in">
+        <div class="checkbox2">
+            <input type="checkbox" class="checkbox2__input" id="checkbox2__input">
+            <label for="checkbox2__input" class="checkbox2__lable" onclick="myFunction()">
+              <div class="checkbox2__spin"></div>
+            </label>
+          </div>
+      </div>
+      <div class="signin__image">
+        <img src="image/phihanhgia.png" alt="" />
+      </div>
+    </div>`
+    }
+    function myFunction() {
+        var element = document.getElementById('signin');
+        element.classList.toggle("dark-mode");
+    }
+    function checkTk() {
+        let user = document.getElementById('user').value;
+        let pass = document.getElementById('pass').value;
+        let save = document.getElementsByClassName('checkbox__input');
+
+        $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            type: 'GET',
+            url: 'http://localhost:8686/cu-dan/all',
+            success: function (data) {
+                for (var i = 0; i < data.length; i++) {
+                   if(data[i].username == user && data[i].password == pass)
+                   {
+                       localStorage.setItem("KEY",localStorage.getItem("KEY")+1);
+                       alert("đăng nhập thành công!");
+                       home();
+                   }
+                }
+
+            }
+        });
+        // alert("tài khoản hoặc mật khẩu sai!");
+    }
+    function qlCanHo() {
+        document.body.innerHTML=`<div class="header">
+    <h1>Quản lý căn hộ</h1>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="home()">Trang chủ</a></li>
+            <li><a href="#" onclick="qlCanHo()">Quản lý căn hộ</a></li>
+            <li><a href="#" onclick="qlCuDan()">Quản lý cư dân</a></li>
+            <li><a href="#" onclick="qlDichVu()">Dịch vụ</a></li>
+        </ul>
+    </nav>
+</div>
+<div class="container">
+    <div class="add-apartment">
+        <h2>Thêm căn hộ</h2>
+        <form action="#">
+            <label for="apartment-number">Số căn hộ:</label>
+            <input type="text" id="soch" name="apartment-number" required>
+            <label for="floor">Tầng:</label>
+            <input type="text" id="tang" name="floor" required>
+            <label for="area">Diện tích:</label>
+            <input type="text" id="dientich" name="area" required>
+            <label for="area">Gía:</label>
+            <input type="text" id="gia" name="area" required>
+            <button type="submit" onclick="them()">Thêm</button>
+        </form>
+    </div>
+    <div class="apartment-list">
+        <h2>Danh sách căn hộ</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Số căn hộ</th>
+                <th scope="col">Tầng</th>
+                <th scope="col">Diện tích</th>
+                <th scope="col">Gía</th>
+                <th scope="col">Quản lý</th>
+            </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+</div>`;
+        $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            type: 'GET',
+            url: 'http://localhost:8686/can-ho/all',
+            success: function (data) {
+                for(var i = 0; i < data.length; i++)
+                {
+                    document.getElementById('tbody').innerHTML+=`<tr>
+                <th scope="row">${data[i].id}</th>
+                <td>${data[i].tang}</td>
+                <td>${data[i].dientich}</td>
+                <td>${data[i].gia}</td>
+                <td><i onclick="them()">Sửa</i> | <i onclick="xoach(${data[i].id})">Xóa</i></td>
+            </tr>`
+                }
+
+            }
+        });
+    }
+    function xoach(id)
+    {
+        $.ajax({
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+            type: 'DELETE',
+            url: 'http://localhost:8686/can-ho/delete?id=' + id,
+            success: function (data) {
+                alert("Đã xóa căn hộ!");
+            },
+        });
+        home();
+    }
+    function home()
+    {
+        document.body.innerHTML=`<header>
+  <nav>
+    <ul>
+      <li><a href="#" onclick="home()">Trang chủ</a></li>
+      <li><a href="#" onclick="qlCanHo()">Quản lý căn hộ</a></li>
+      <li><a href="#" onclick="qlCuDan()">Quản lý cư dân</a></li>
+      <li><a href="#" onclick="qlDichVu()">Dịch vụ</a></li>
+      <li><a href="#">Liên hệ</a></li>
+    </ul>
+  </nav>
+  <div class="header-container">
+    <div class="logo">
+      <img src="image/kg.jpg" style="max-width: 100%;">
+    </div>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-container">
+      <h1>Quản lý cư dân chung cư</h1>
+      <p>Với nhiều năm kinh nghiệm và đội ngũ nhân viên chuyên nghiệp, chúng tôi luôn đem đến những giá trị tốt nhất cho khách hàng</p>
+      <a href="#" class="button">Tìm hiểu thêm</a>
+    </div>
+  </section>
+  <section class="services">
+    <h2>Dịch vụ </h2>
+    <ul>
+      <li>
+        <img src="image/bv.jpg" alt="Service 1">
+        <h3>Bảo vệ và an ninh</h3>
+        <p> Dịch vụ bảo vệ và an ninh đảm bảo an toàn cho mọi cư dân chung cư và tài sản...</p>
+
+        <a href="#" class="button">Xem thêm</a>
+
+      </li>
+      <li>
+        <img src="image/ql.jpg" alt="Service 2">
+        <h3>Dịch vụ quản lý</h3>
+        <p>Bao gồm các hoạt động quản lý chung, bao gồm thu gom rác thải, duy trì và sửa chữa hạ tầng, và các hoạt động quản lý khác.</p>
+
+        <a href="#" class="button">Xem thêm</a>
+
+      </li>
+      <li>
+        <img src="image/kvc.jpg" alt="Service 3">
+        <h3>Công viên và khu vui chơi</h3>
+        <p>Cung cấp không gian để cư dân tận hưởng các hoạt động thể dục thể thao và giúp cải thiện sức khỏe.</p>
+        <a href="#" class="button">Xem thêm</a>
+
+      </li>
+    </ul>
+  </section>
+  <section class="about">
+    <h2>Tin tức - Sự kiện</h2>
+    <div class="col-md-6">
+      <ul class="footer-nav">
+        <li><a href="/">Thông báo chung</a></li>
+        <li><a href="/about">Tin nội bộ</a></li>
+        <li><a href="/privacy-policy">Tin sự kiện</a></li>
+        <li><a href="/terms-of-use">Kỹ thuật - Chuyên ngành</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="contact">
+  </section>
+</main>
+<aside class="sidebar">
+  <div class="widget">
+  </div>
+</aside>
+<footer>
+  <p>Website quản lý cư dân chung cư, GemK352</p>
+</footer>`;
+    }
+    function qlCuDan(){
+        document.body.innerHTML=`<header>
+    <h1>Quản lý cư dân</h1>
+    <nav>
+        <ul>
+            <li><a href="" onclick="home()">Trang chủ</a></li>
+            <li><a href="#" onclick="qlCanHo()">Quản lý căn hộ</a></li>
+            <li><a href="#" onclick="qlCuDan()">Quản lý cư dân</a></li>
+            <li><a href="#" onclick="qlDichVu()">Dịch vụ</a></li>
+        </ul>
+    </nav>
+</header>
+<main id="main">
+ <button id="btnThem"><a onclick="themUICuDan()">Thêm cư dân mới</a></button>
+    <h2>Danh sách cư dân</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Mã cư dân</th>
+            <th scope="col">Tên cư dân</th>
+            <th scope="col">Số điện thoại</th>
+            <th scope="col">Căn hộ</th>
+            <th scope="col">Ngày đăng ký</th>
+        </tr>
+        </thead>
+        <tbody id="tbodycudan">
+
+
+        </tbody>
+    </table>
+</main>
+<footer>
+    <p>Trang web quản lý cư dân chung cư</p>
+</footer>`;
+
+        $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            type: 'GET',
+            url: 'http://localhost:8686/cu-dan/all',
+            success: function (data) {
+                for(var i = 0; i < data.length; i++)
+                {
+                    document.getElementById('tbodycudan').innerHTML+=`<tr>
+            <td>${data[i].id}</td>
+            <td>${data[i].name}</td>
+            <td>${data[i].sdt}</td>
+            <td>${data[i].diaChi}</td>
+            <td>${data[i].ngayThue}</td>
+            <td><a href="#" onclick="suacd()">Sửa</a> | <a href="#" onclick="xoacd(${data[i].id})">Xóa</a></td>
+        </tr>`
+                }
+
+            }
+        });
+    }
+    function suacd()
+    {
+        $('#btnThem').hide();
+        document.getElementById('main').innerHTML+=`<form action="#">
+            <label for="apartment-number">ID:</label>
+            <input type="text" id="id" name="apartment-number" required>
+            <label for="apartment-number">Tên:</label>
+            <input type="text" id="ten" name="apartment-number" required>
+            <label for="area">SDT:</label>
+            <input type="text" id="sdt" name="area" required>
+            <label for="floor">Căn hộ:</label>
+            <input type="text" id="diachi" name="floor" required>
+            <label for="area">Ngày thuê:</label>
+            <input type="date" id="ngaythue" name="area" required>
+            <button type="submit" onclick="themCuDan()">Sửa</button>
+        </form>`;
+    }
+    function themUICuDan()
+    {
+        $('#btnThem').hide();
+        document.getElementById('main').innerHTML+=`<form action="#">
+            <label for="apartment-number">Tên:</label>
+            <input type="text" id="ten" name="apartment-number" required>
+            <label for="area">SDT:</label>
+            <input type="text" id="sdt" name="area" required>
+            <label for="floor">Căn hộ:</label>
+            <input type="text" id="diachi" name="floor" required>
+            <label for="area">Ngày thuê:</label>
+            <input type="date" id="ngaythue" name="area" required>
+            <button type="submit" onclick="themCuDan()">Thêm</button>
+        </form>`;
+    }
+    function xoacd(id){
+        $.ajax({
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+            type: 'DELETE',
+            url: 'http://localhost:8686/cu-dan/delete?id=' + id,
+            success: function (data) {
+                alert("Đã xóa cư dân!");
+            },
+        });
+        home();
+    }
+    function them()
+    {
+        var obj={
+            id:document.getElementById('soch').value,
+            tang:document.getElementById('tang').value,
+            dientich:document.getElementById('dientich').value,
+            gia:document.getElementById('gia').value
+        };
+        $.ajax({
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+            type: "POST",
+            url: "http://localhost:8686/can-ho/insert-update",
+            data: JSON.stringify(obj),
+            success: function (data) {
+                // console.log(data);
+                alert("Thành  công");
+            },
+        });
+        home();
+    }
+    function themCuDan()
+    {
+        var obj={
+            name:document.getElementById('ten').value,
+            diaChi:document.getElementById('diachi').value,
+            ngayThue:document.getElementById('ngaythue').value,
+            sdt:document.getElementById('sdt').value
+        };
+        $.ajax({
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+            type: "POST",
+            url: "http://localhost:8686/cu-dan/insert-update",
+            data: JSON.stringify(obj),
+            success: function (data) {
+                // console.log(data);
+                alert("Thành  công");
+            },
+        });
+        home();
+
+
+    }
+    function qlDichVu()
+    {
+        document.body.innerHTML=`<header>
+    <h1>Quản lý cư dân</h1>
+    <nav>
+        <ul>
+            <li><a href="" onclick="home()">Trang chủ</a></li>
+            <li><a href="#" onclick="qlCanHo()">Quản lý căn hộ</a></li>
+            <li><a href="#" onclick="qlCuDan()">Quản lý cư dân</a></li>
+            <li><a href="#" onclick="qlDichVu()">Dịch vụ</a></li>
+        </ul>
+    </nav>
+</header><main id="main">
+    <h2>Danh sách Dịch Vụ</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Mã dịch vụ</th>
+            <th scope="col">Tên Dịch vụ</th>
+            <th scope="col">Ngày thực hiện</th>
+        </tr>
+        </thead>
+        <tbody id="tbodydichvu">
+
+
+        </tbody>
+    </table>
+    <button id="btnThem"><a onclick="themUIDv()">Thêm dịch vụ mới</a></button>
+</main>`;
+        $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            type: 'GET',
+            url: 'http://localhost:8686/dich-vu/all',
+            success: function (data) {
+                for(var i = 0; i < data.length; i++)
+                {
+                    document.getElementById('tbodydichvu').innerHTML+=`<tr>
+            <td>${data[i].id}</td>
+             <td>${data[i].tenDV}</td>
+            <td>${data[i].ngayThucHien}</td>
+            <td><a href="#" onclick="xoadv(${data[i].id})">Xóa</a></td>
+        </tr>`
+                }
+
+            }
+        });
+    }
+    function themUIDv(){
+        document.getElementById('main').innerHTML+=`<form action="#">
+            <label for="apartment-number">ID:</label>
+            <input type="text" id="id" name="apartment-number" required>
+            <label for="area">tên dịch vụ:</label>
+            <input type="text" id="tendv" name="area" required>
+            <label for="floor">Ngày thực hiện:</label>
+            <input type="date" id="ngaythuchien" name="floor" required>
+            <button type="submit" onclick="themdv()">Thêm</button>
+        </form>`;
+    }
+    function themdv()
+    {
+        var obj={
+            id:document.getElementById('id').value,
+            ngayThucHien:document.getElementById('ngaythuchien').value,
+            tenDV:document.getElementById('tendv').value,
+        };
+        $.ajax({
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+            type: "POST",
+            url: "http://localhost:8686/dich-vu/insert-update",
+            data: JSON.stringify(obj),
+            success: function (data) {
+                // console.log(data);
+                alert("Thành  công");
+            },
+        });
+        home();
+
+
+    }
+    function xoadv(id){
+        $.ajax({
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+            type: 'DELETE',
+            url: 'http://localhost:8686/dich-vu/delete?id=' + id,
+            success: function (data) {
+                alert("Đã xóa !");
+            },
+        });
+        home();
+    }
+</script>
+</html>
